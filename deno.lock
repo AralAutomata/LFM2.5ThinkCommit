@@ -1,0 +1,24 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:@noble/curves@1": "1.9.7",
+    "npm:@noble/hashes@1": "1.8.0"
+  },
+  "npm": {
+    "@noble/curves@1.9.7": {
+      "integrity": "sha512-gbKGcRUYIjA3/zCCNaWDciTMFI0dCkvou3TL8Zmy5Nc7sJ47a0jtOeZoTaMxkuqRo9cRhjOdZJXegxYE5FN/xw==",
+      "dependencies": [
+        "@noble/hashes"
+      ]
+    },
+    "@noble/hashes@1.8.0": {
+      "integrity": "sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:@noble/curves@1",
+      "npm:@noble/hashes@1"
+    ]
+  }
+}

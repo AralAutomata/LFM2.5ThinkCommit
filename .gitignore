@@ -1,0 +1,154 @@
+# ThinkCommit .gitignore
+# Only source files should be committed, no sensitive data
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# SENSITIVE DATA - NEVER COMMIT
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Private keys - CRITICAL: Never commit!
+keys/
+
+# Commitment records - contain encrypted responses and thinking traces
+records/
+
+# Environment files - may contain secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# DENO / TYPESCRIPT
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Deno lock file (auto-generated, can be committed if you want deterministic builds)
+# deno.lock
+
+# Deno cache directory
+$DENO_DIR/
+deno_cache/
+
+# Node modules (if using npm packages)
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.js
+*.d.ts
+!*.test.js
+!*.test.d.ts
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# DOCKER
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Docker volumes (mounted directories)
+ollama_data/
+
+# Docker compose override (local development)
+docker-compose.override.yml
+docker-compose.local.yml
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# IDE / EDITOR
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# OS FILES
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# LOGS & TEMP FILES
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TEST & COVERAGE
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# DOCUMENTATION
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Screenshots (optional - uncomment if you don't want to commit screenshots)
+# *.png
+# *.jpg
+# *.jpeg
+# *.webp
+# *.svg
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# WHAT SHOULD BE COMMITTED
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# ✅ Source code: *.ts, *.js, *.json (deno.json)
+# ✅ Configuration: Dockerfile, docker-compose.yml
+# ✅ Documentation: README.md, USAGE.md
+# ✅ Environment template: .env.example
+# ✅ Images: *.png, *.jpg (screenshots)
+#
+# ❌ NEVER COMMIT:
+# ❌ Private keys (keys/*)
+# ❌ Records (records/*)
+# ❌ Environment files with secrets (.env)
+# ❌ .gitkeep files (directory placeholders)
+# ❌ Build artifacts
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

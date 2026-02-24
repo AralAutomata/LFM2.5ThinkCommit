@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Deno
+deno.lock
+
+# Keys - NEVER include in Docker image (mounted as volume)
+/keys/*
+!/keys/.gitkeep
+
+# Records - NEVER include in Docker image (mounted as volume)
+/records/*
+!/records/.gitkeep
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

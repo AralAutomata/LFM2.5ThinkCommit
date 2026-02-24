@@ -1,0 +1,32 @@
+{
+  "name": "thinkcommit",
+  "version": "1.0.0",
+  "exports": "./main.ts",
+  "tasks": {
+    "commit": "deno run --env --allow-read --allow-write --allow-env --allow-run --allow-net main.ts commit",
+    "verify": "deno run --env --allow-read --allow-write --allow-env --allow-run --allow-net main.ts verify",
+    "start": "deno run --env --allow-read --allow-write --allow-env --allow-run --allow-net main.ts"
+  },
+  "imports": {
+    "@noble/curves": "npm:@noble/curves@^1.0.0",
+    "@noble/curves/ed25519": "npm:@noble/curves@^1.0.0/ed25519",
+    "@noble/hashes": "npm:@noble/hashes@^1.0.0",
+    "@noble/hashes/blake3": "npm:@noble/hashes@^1.0.0/blake3",
+    "@noble/hashes/utils": "npm:@noble/hashes@^1.0.0/utils"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "lib": ["deno.ns", "deno.unstable"]
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "semiColons": true,
+    "singleQuote": false
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  }
+}

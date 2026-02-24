@@ -1,0 +1,17 @@
+services:
+  # Deno application - runs the ThinkCommit CLI
+  # Connects to Ollama running on the host (via distrobox)
+  deno-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: thinkcommit-app
+    volumes:
+      - ./keys:/app/keys
+      - ./records:/app/records
+    environment:
+      # Use host network to reach Ollama on localhost
+      - OLLAMA_HOST=http://172.17.0.1:11434
+    # Override entrypoint to allow running commands
+    entrypoint: []
+    command: ["deno", "run", "--allow-read", "--allow-write", "--allow-env", "--allow-run", "--allow-net", "main.ts"]
